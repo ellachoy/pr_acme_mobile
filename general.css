@@ -1,0 +1,137 @@
+:root {
+    /* color */
+    --color-black: #00000;
+    --color-ink: #2c3331;
+    --color-white: #ffffff;
+    --color-green: #2c594e;
+    --color-green-middle: #758981;
+    --color-green-light: #edefee;
+    --color-yellow: #efb139;
+
+    /* font-size*/
+    --font-size-large: 64px;
+    --font-size-medium: 24px;
+    --font-size-regular: 20px;
+    --font-size-small: 14px;
+    --font-size-micro: 12px;
+
+    /* font-weight */
+    --font-extra-light: 200;
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* size */
+    --size-img: 100%;
+    --size-arrow: 30%;
+
+}
+
+/*Typography*/
+h1 {
+    font-family: Oswald_medium;
+    font-size: var(--font-size-large);
+    line-height: 72px;
+}
+
+h2 {
+    font-family: Oswald_semi-bold;
+    font-size: var(--font-size-medium);
+    line-height: 34px;
+    /*text-transform: uppercase;*/
+}
+
+h3 {
+    font-family: Montserrat_regular;
+    font-size: var(--font-size-regular);
+    line-height: 28px;
+}
+
+h4 {
+    font-family: Montserrat_light;
+    font-size: var(--font-size-small);
+    line-height: 22px;
+    /*text-transform: uppercase;*/
+}
+
+p {
+    font-family: Montserrat_regular;
+    font-size: var(--font-size-small);
+    line-height: 24px;
+}
+
+
+/* universal tags*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    max-width:1500px;
+    margin-right:auto;
+    margin-left:auto;
+    padding-right:32px;
+    padding-left:32px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button, .breadcrumb {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+.info__text {
+    font-family: Oswald_regular;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-light);
+    line-height: 20px;
+}
+
+.link {
+    /*font-family: Oswald_regular;*/
+    font-family: Montserrat_regular;
+    font-size: var(--font-size-small);
+    line-height: 24px;
+}
+
+.button, .breadcrumb {
+    font-family: Oswald_regular;
+    font-size: var(--font-size-micro);
+    line-height: 24px;
+}
+
+
+/* padding for side*/
+.side--pad {
+    padding-top: 15px;     /**new ***/
+    padding-right: 100px;   /**new ***/
+    padding-left: 100px;   /**new ***/
+    /*padding:10px 100px !*old*!*/
+}
+
+/* webkit-line-clamp*/
+.clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.clamp__short {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}

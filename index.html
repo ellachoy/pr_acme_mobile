@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="general.css">
+  
+    <link rel="stylesheet" href="style.css">
+
+    <script src="main.js" defer></script>
+
+    <title>ACME</title>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav id="navbar" class="side--pad ">
+        <img src="assets/imgs/ACME_Logo.svg" class="navbar__logo">
+
+        <!--    navbar menu & menu-modal for mobile-->
+        <div class="modal hidden">
+            <!--check if not needed -> remove-->
+            <ul class="navbar__menu modalBox ">
+                <div class="modal__header">
+                    <button class="closeBtn">
+                        <img src="assets/icons/Close.svg" class="close__img">
+                        <span class="close">menu close</span>
+                    </button>
+
+                </div>
+                <li class="navbar__menu__item">
+                    <a href="#" class="button">PRODUCTS</a>
+                </li>
+
+                <li class="navbar__menu__item modal_sub">
+                    <a href="#" class="button down">INDUSTRIES</a>
+
+                    <a href="#" class="modal_sub--link">
+                        <img src="assets/icons/Arrowhead-Right.svg" class="arrow--link__img">
+                    </a>
+                    <div class="dropdown-content">
+                        <!--new added div-->
+                        <ul>
+                            <li>
+                                <a href="#" class="button">AUTOMOTIVE</a>
+                            </li>
+                            <li>
+                                <a href="#" class="button">AEROSPACE</a>
+                            </li>
+                            <li>
+                                <a href="#" class="button">GENERAL INDUSTRIES</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navbar__menu__item active__page">
+                    <a href="#" class="button">MEDIA</a>
+                    <div class="active__page--underline">
+
+                    </div>
+                </li>
+                <li class="navbar__menu__item">
+                    <a href="#" class="button">DOWNLOADS</a>
+                </li>
+                <li class="navbar__menu__item">
+                    <a href="#" class="button">CONTACTS</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Toggle Button -->
+        <button class="navbar__toggle-btn">
+            <!--        <a href="modal/menu-modal/menu-modal.html" id="myBtn">-->
+            <a href="#" id="myBtn">
+                <img src="assets/icons/Menu.svg" class="toggle__img">
+            </a>
+
+        </button>
+    </nav>

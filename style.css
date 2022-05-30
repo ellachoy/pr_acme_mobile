@@ -1,0 +1,223 @@
+#navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar .active__page {
+  color: var(--color-yellow);
+}
+
+.navbar__logo {
+  width: calc(var(--size-img) / 8);
+  /*margin-bottom: 13px; !**new ***!*/
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__menu__item {
+  position: relative; /**new in all menu item.  *********/
+  align-self: flex-end; /**new *********/
+  padding: 18px 29px; /**new *********/
+}
+
+.navbar__menu__item a {
+  font-family: Oswald_regular;
+  font-size: 18px;
+  font-weight: var(--font-semi-bold);
+  color: var(--color-black);
+  letter-spacing: 1px;
+}
+.modal_sub--link {
+  display: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 0; /**new ***/
+  /*top:0;*/
+  /*transform: translateX(-130%);*/
+  /*transform: translateY(97%);!**new ***!*/
+  transform: translate(-15%, 98%);
+  /*transform:translateY(31px); !*   self test bad with px*!*/
+  /*top:100%;     !**self test- no success**!*/
+  background-color: var(--color-yellow);
+  width: 150%;
+  padding: 30px 0 20px 30px;
+}
+
+.dropdown-content a {
+  color: var(--color-white);
+  display: inline-block;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.navbar__menu__item:hover .dropdown-content {
+  display: block;
+}
+
+.navbar__menu__item a:hover {
+  color: var(--color-green);
+}
+
+.dropdown--content a:hover {
+  color: var(--color-black);
+}
+
+/* actual page underline */
+.active__page--underline::after {
+  content: '-';
+  color: var(--color-yellow);
+  background-color: #efb139;
+  position: absolute;
+  bottom: 0;
+  transform: translate(-30%, 10%);
+  /*width:calc(var(--size-img)/2);*/
+  width: var(--size-img);
+  height: calc(var(--size-img) / 20);
+}
+
+.navbar__toggle-btn {
+  background-color: var(--color-yellow);
+  line-height: 1px;
+  display: none;
+}
+
+.toggle__img {
+  width: 30px;
+}
+
+.modal__header {
+  visibility: hidden;
+}
+/* below code for mobile devices*/
+
+@media (min-width: 320px) and (max-width: 768px) {
+  body {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /*general*/
+  .side--pad {
+    padding: 25px 15px 15px 15px;
+  }
+
+  /*    navbar*/
+  #navbar {
+    flex-direction: column;
+  }
+
+  .navbar__logo {
+    width: calc(var(--size-img) / 3);
+    margin-bottom: 8px;
+  }
+
+  .active__page--underline {
+    visibility: hidden;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbar__toggle-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    /*transform: translate(1000%, 40%);*/
+    transform: translate(730%, 60%);
+    width: 11%;
+    background-color: var(--color-yellow);
+    border: none;
+    outline: none;
+  }
+
+  .toggle__img {
+    padding: 3px;
+    line-height: 0;
+    width: 100%;
+  }
+
+  /***----- menubar test1--------***/
+  .navbar__menu.open {
+    display: block;
+    text-align: start;
+    /*padding:10px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+  }
+
+  .navbar__menu__item a {
+    font-size: 2em;
+    margin-left: 25px;
+  }
+
+  .modal__header {
+    visibility: visible;
+    font-family: Oswald_regular;
+  }
+  .closeBtn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: Oswald_regular;
+    font-size: var(--font-size-medium);
+    padding: 20px 0 60px 10px;
+  }
+  .close__img {
+    width: calc(var(--size-img) / 8);
+    margin-right: 10px;
+  }
+  .dropdown-content {
+    visibility: hidden;
+  }
+  .navbar__menu.hidden {
+    display: none;
+  }
+  .navbar__toggle-btn.hidden {
+    display: none;
+  }
+  .navbar__toggle-btn.open {
+    display: block;
+  }
+  .modal_sub {
+    /*background-color: coral;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal_sub--link {
+    display: block;
+    width: calc(var(--size-arrow) / 3);
+  }
+
+  /*******modal-submenu*********/
+
+  /**Header***/
+  /* #header {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+  .header__title {
+    font-size: 3em;
+  }
+  .header__text {
+    font-size: 1em;
+    padding-right: 0;
+  } */
+}
