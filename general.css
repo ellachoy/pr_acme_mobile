@@ -66,15 +66,10 @@ p {
 /* universal tags*/
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 body{
-    max-width:1500px;
-    margin-right:auto;
-    margin-left:auto;
-    padding-right:32px;
-    padding-left:32px;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -100,7 +95,7 @@ li {
 }
 
 .link {
-    /*font-family: Oswald_regular;*/
+
     font-family: Montserrat_regular;
     font-size: var(--font-size-small);
     line-height: 24px;
@@ -111,27 +106,7 @@ li {
     font-size: var(--font-size-micro);
     line-height: 24px;
 }
-
-
-/* padding for side*/
-.side--pad {
-    padding-top: 15px;     /**new ***/
-    padding-right: 100px;   /**new ***/
-    padding-left: 100px;   /**new ***/
-    /*padding:10px 100px !*old*!*/
-}
-
-/* webkit-line-clamp*/
-.clamp {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-}
-
-.clamp__short {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
+img{
+    max-width:100%;
+    height: auto;
 }

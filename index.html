@@ -7,77 +7,441 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="general.css">
-  
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="style.css">
-
     <script src="main.js" defer></script>
-
     <title>ACME</title>
 </head>
 
 <body>
-    <!--Navbar-->
-    <nav id="navbar" class="side--pad ">
-        <img src="assets/imgs/ACME_Logo.svg" class="navbar__logo">
+    <!--<script>-->
+    <!--    const button1 = document.querySelector('.button');-->
+    <!--    const button2 = document.querySelector('[data-nav-trigger]');-->
+    <!--</script>-->
+    <div>-----------------------------------------------------</div>
+    header sample
+    <div>-----------------------------------------------------</div>
+    <style>
+        .page-header {
+            background-color: lime;
+        }
 
-        <!--    navbar menu & menu-modal for mobile-->
-        <div class="modal hidden">
-            <!--check if not needed -> remove-->
-            <ul class="navbar__menu modalBox ">
-                <div class="modal__header">
-                    <button class="closeBtn">
-                        <img src="assets/icons/Close.svg" class="close__img">
-                        <span class="close">menu close</span>
-                    </button>
+        .logo {
+            max-width: 150px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
 
-                </div>
-                <li class="navbar__menu__item">
-                    <a href="#" class="button">PRODUCTS</a>
-                </li>
+        .page-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-                <li class="navbar__menu__item modal_sub">
-                    <a href="#" class="button down">INDUSTRIES</a>
+        .navigation ul {
+            display: none;
+        }
 
-                    <a href="#" class="modal_sub--link">
-                        <img src="assets/icons/Arrowhead-Right.svg" class="arrow--link__img">
-                    </a>
-                    <div class="dropdown-content">
-                        <!--new added div-->
+        .navigation.is-open .nav-container>ul {
+            display: block;
+        }
+
+        .navigation.is-open .nav-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: yellow;
+            padding-top: 100px;
+        }
+
+        .nav-container ul.is-open {
+            display: block;
+        }
+
+        .logo,
+        .trigger {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media screen and (min-width: 1024px) {
+
+            .trigger,
+            .children-trigger {
+                display: none;
+            }
+
+            .page-header .container {
+                align-items: flex-end;
+            }
+
+            .navigation.is-open .nav-container>ul {
+                display: flex;
+            }
+
+            .nav-container>ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .navigation li {
+                position: relative;
+            }
+
+            .navigation li a {
+                display: inline-block;
+                padding-top: 16px;
+                padding-right: 20px;
+                padding-bottom: 16px;
+                padding-left: 20px;
+                white-space: nowrap;
+            }
+
+            .navigation li>ul a {
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+
+            .navigation li>ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: orange;
+            }
+
+            .navigation li>ul::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                left: 0;
+                transform: translateY(-3px);
+                height: 3px;
+                background-color: orange;
+            }
+
+            .navigation li:hover>ul {
+                display: block;
+            }
+
+            .navigation .is-active {
+                color: orange;
+            }
+
+            .navigation .is-active::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 3px;
+                background-color: orange;
+            }
+
+            .navigation.is-open .nav-container {
+                position: unset;
+                top: unset;
+                right: unset;
+                bottom: unset;
+                left: unset;
+                background-color: unset;
+                padding-top: unset;
+            }
+
+            .nav-container ul.is-open {
+                display: none;
+            }
+        }
+    </style>
+
+    <header class="page-header">
+        <div class="wrapper">
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="assets/imgs/ACME_Logo.svg" alt="Logo ACME">
+                </a>
+                <nav class="navigation" data-nav>
+                    <button class="trigger" data-nav-trigger>Menü</button>
+                    <div class="nav-container">
                         <ul>
                             <li>
-                                <a href="#" class="button">AUTOMOTIVE</a>
+                                <a href="#">Products</a>
                             </li>
                             <li>
-                                <a href="#" class="button">AEROSPACE</a>
+                                <a href="#">Industries</a>
+                                <button class="children-trigger" data-children-trigger="#child-2343">Open</button>
+                                <ul id="child-2343">
+                                    <li>
+                                        <a href="#">Automotive</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Aerospace</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">General Industries</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
-                                <a href="#" class="button">GENERAL INDUSTRIES</a>
+                                <a href="#" class="is-active">Media</a>
+                            </li>
+                            <li>
+                                <a href="#">Downloads</a>
+                                <button class="children-trigger" data-children-trigger="#child-2353">Open</button>
+                                <ul id="child-2345">
+                                    <li>
+                                        <a href="#">Automotive</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Aerospace</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">General Industries</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Contacts</a>
                             </li>
                         </ul>
                     </div>
-                </li>
-
-                <li class="navbar__menu__item active__page">
-                    <a href="#" class="button">MEDIA</a>
-                    <div class="active__page--underline">
-
-                    </div>
-                </li>
-                <li class="navbar__menu__item">
-                    <a href="#" class="button">DOWNLOADS</a>
-                </li>
-                <li class="navbar__menu__item">
-                    <a href="#" class="button">CONTACTS</a>
-                </li>
-            </ul>
+                </nav>
+            </div>
         </div>
-        <!-- Toggle Button -->
-        <button class="navbar__toggle-btn">
-            <!--        <a href="modal/menu-modal/menu-modal.html" id="myBtn">-->
-            <a href="#" id="myBtn">
-                <img src="assets/icons/Menu.svg" class="toggle__img">
-            </a>
+    </header>
 
-        </button>
-    </nav>
+    <script>
+        const nav = document.querySelector('[data-nav]');
+        const navTrigger = document.querySelector('[data-nav-trigger]');
+        const childrenTrigger = document.querySelectorAll('[data-children-trigger]');
+        const openClass = 'is-open';
+
+        navTrigger.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            if (nav.classList.contains(openClass)) {
+                nav.classList.remove(openClass);
+            } else {
+                nav.classList.add(openClass);
+            }
+        });
+
+        childrenTrigger.forEach((trigger) => {
+            const child = trigger.dataset.childrenTrigger;
+            const childElement = document.querySelector(child);
+
+            trigger.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                if (childElement.classList.contains(openClass)) {
+                    childElement.classList.remove(openClass);
+                } else {
+                    childElement.classList.add(openClass);
+                }
+            });
+        });
+    </script>
+    <div>-----------------------------------------------------</div>
+    header-Ella
+    <div>-----------------------------------------------------</div>
+
+    <header>
+        <div>
+            <div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <div>-----------------------------------------------------</div>
+    Footer sample
+    <div>-----------------------------------------------------</div>
+
+
+    <style>
+        .footer {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 4vw;
+            padding-left: 4vw;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 16px 64px;
+        }
+
+        .copyright {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        .footer ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+
+        .footer ul li {
+            background-color: purple;
+
+        }
+
+        @media screen and (min-width:686px) {
+            .copyright {
+                margin-right: unset;
+                margin-left: unset;
+                text-align: unset;
+            }
+        }
+    </style>
+
+    <section class="footer">
+        <div class="wrapper">
+            <div class="container">
+                <ul class="nav-meta">
+                    <li>
+                        <a href="#">Legal notice</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+                </ul>
+                <ul class="social-media">
+                    <li>
+                        <a href="#" target="_blank" rel="noopener">FB</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener">LI</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener">TW</a>
+                    </li>
+                </ul>
+                <span class="copyright">
+                    &copy; 2021 ACME. Part of the <a href="#">ACME Group</a>
+                </span>
+            </div>
+        </div>
+    </section>
+    <!--<style>-->
+    <!--    .sidebar {-->
+    <!--        margin-bottom: 4px;-->
+    <!--    }-->
+    <!--</style>-->
+    <!--<div class="sidebar"></div>-->
+    <!--<div class="margin-y-4 my-16-xs"></div>-->
+
+    <!--footer test ella-->
+    <div>-----------------------------------------------------</div>
+    <div>-----------------------------------------------------</div>
+    Footer-Ella
+    <div>-----------------------------------------------------</div>
+    <div>-----------------------------------------------------</div>
+    <style>
+        .footer__test {
+            background-color: var(--color-ink);
+            padding: 16px 0;
+        }
+
+        .footer__container {
+            background-color: yellow;
+            display: flex;
+            justify-content: space-between;
+            /*align-items: center;*/
+            flex-wrap: wrap;
+            /*gap: 10px;*/
+            gap: 16px 64px;
+        }
+
+        .footer__wrapper {
+            background-color: blue;
+            max-width: 1000px;
+            /*padding: 0 5vw 0 5vw;*/
+            padding: 0 5%;
+            margin: 0 auto;
+        }
+
+        .footer__test ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px 16px;
+        }
+
+        .footer__copyright {
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        .footer__test ul,
+        span {
+            background-color: orange;
+        }
+
+        .footer__test img {
+            width: 25px;
+            height: auto;
+        }
+
+        @media screen and (min-width:686px) {
+            .footer__copyright {
+                margin-right: unset;
+                margin-left: unset;
+                text-align: unset;
+            }
+        }
+    </style>
+    <section class="footer__test">
+        <div class="footer__wrapper">
+            <div class="footer__container">
+                <ul>
+                    <li>
+                        <a href="#">Legal Notice</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener">
+                            <img src="assets/icons/Facebook.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener">
+                            <img src="assets/icons/LinkedIn.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener">
+                            <img src="assets/icons/Twitter.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <span class="footer__copyright">
+                    &copy; 2021 ACME. Part of the <a href="#">ACME Group</a>
+                </span>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+        
