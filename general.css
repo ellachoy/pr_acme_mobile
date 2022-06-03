@@ -77,7 +77,9 @@ a {
     cursor: pointer;
 }
 
-.button, .breadcrumb {
+button,
+.button,
+.breadcrumb {
     border: none;
     outline: none;
     background-color: transparent;
@@ -100,8 +102,8 @@ li {
     font-size: var(--font-size-small);
     line-height: 24px;
 }
-
-.button, .breadcrumb {
+.button,
+.breadcrumb {
     font-family: Oswald_regular;
     font-size: var(--font-size-micro);
     line-height: 24px;

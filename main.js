@@ -1,24 +1,31 @@
-// console.log("hallo main js")
+console.log('hallo')
+const navMenu= document.querySelector('[data-nav-]')
+const navTrigger =document.querySelector('[data-nav-trigger-]');
+const childrenTrigger=document.querySelector('[data-cildren-trigger-]');
+const open= 'open'
+ // navTrigger.addEventListener('click',(event)=>{
+ //     event.preventDefault();
+ //
+ //     if(navMenu.classList.contains(open)){
+ //         navMenu.classList.remove(open);
+ //     }else{
+ //         navMenu.classList.add(open);
+ //     }
+ // })
+navTrigger.addEventListener('click',()=>{
+    navMenu.classList.toggle('open');
+})
+childrenTrigger.forEach((trigger) => {
+    const child = trigger.dataset.childrenTrigger;
+    const childElement = document.querySelector(child);
 
-// //-------------------  menubar test1  in mobile version---------------------
-// const navbar= document.getElementById("navbar")
-// const navbarMenu= document.querySelector(".navbar__menu");
-// const hamburger= document.querySelector(".navbar__toggle-btn");
-// const closeBtn= document.querySelector(".closeBtn");
-// const subShow= document.querySelector('.modal_sub');
-// const subMenu=document.querySelector('.sub__menu');
+    trigger.addEventListener('click', (event) => {
+        event.preventDefault();
 
-// hamburger.addEventListener('click',()=>{
-//     console.log('toggle test')
-//     navbarMenu.classList.toggle('open')
-//     // hamburger.classList.add("hidden")
-// })
-// // closeBtn.addEventListener('click',()=>{
-// //     console.log('close test');
-// //     navbarMenu.classList.add("hidden");
-// //     hamburger.classList.add('open');
-// // })
-// // subShow.addEventListener('click',()=>{
-// //     console.log('test submenu')
-// //     subMenu.classList.toggle('open');
-// // })
+        if (childElement.classList.contains(openClass)) {
+            childElement.classList.remove(openClass);
+        } else {
+            childElement.classList.add(openClass);
+        }
+    });
+});
